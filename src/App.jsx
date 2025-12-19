@@ -1,11 +1,16 @@
 import './App.css'
+import Home from './components/Home'
+import Profile from './components/Profile'
 
 function App() {
 
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>React-Context-Api</h1>
-     
+      <div style={{ display: 'flex', gap: '2rem', justifyContent: 'center', paddingTop: '1rem' }}>
+        <Home />
+        <Profile />
+      </div>
     </>
   )
 }
