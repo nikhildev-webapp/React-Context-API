@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
+import { CartContext } from "../context/CartContext";
 
 const langLabel = {
   en: "English",
@@ -8,6 +9,7 @@ const langLabel = {
 
 export default function Navbar() {
   const { language, toggleLanguage } = useContext(LanguageContext);
+  const { cartCount } = useContext(CartContext);
 
   return (
     <nav style={{ display: "flex", justifyContent: "space-between", padding: "0.75rem 1rem", borderBottom: "1px solid #eaeaea" }}>
@@ -17,6 +19,9 @@ export default function Navbar() {
         <button onClick={toggleLanguage} style={{ padding: "0.35rem 0.75rem" }}>
           {language === "en" ? "Switch to हिन्दी" : "Switch to English"}
         </button>
+        <div style={{ marginLeft: 8 }}>
+          <strong>Cart:</strong> <span>{cartCount}</span>
+        </div>
       </div>
     </nav>
   );
