@@ -1,12 +1,13 @@
 import './App.css'
-import { ThemeContext } from './context/TemeContext'
+import Home from './components/Home'
+
 
 function App() {
 
   return (
     <>
       <h1 style={{ textAlign: 'center' }}>React-Context-Api</h1>
-   
+      <Home/>
     </>
   )
 }
