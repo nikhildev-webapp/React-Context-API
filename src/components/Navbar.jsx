@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../context/LanguageContext";
 import { CartContext } from "../context/CartContext";
+import { AuthContext } from "../context/AuthContext";
 
 const langLabel = {
   en: "English",
@@ -10,6 +11,7 @@ const langLabel = {
 export default function Navbar() {
   const { language, toggleLanguage } = useContext(LanguageContext);
   const { cartCount } = useContext(CartContext);
+  const { isLoggedIn, login, logout } = useContext(AuthContext);
 
   return (
     <nav style={{ display: "flex", justifyContent: "space-between", padding: "0.75rem 1rem", borderBottom: "1px solid #eaeaea" }}>
@@ -21,6 +23,13 @@ export default function Navbar() {
         </button>
         <div style={{ marginLeft: 8 }}>
           <strong>Cart:</strong> <span>{cartCount}</span>
+        </div>
+        <div style={{ marginLeft: 12 }}>
+          {isLoggedIn ? (
+            <button onClick={logout} style={{ padding: "0.35rem 0.75rem" }}>Logout</button>
+          ) : (
+            <button onClick={login} style={{ padding: "0.35rem 0.75rem" }}>Login</button>
+          )}
         </div>
       </div>
     </nav>

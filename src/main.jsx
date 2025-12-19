@@ -6,6 +6,7 @@ import { UserProvider } from './context/UserContext.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 import { LanguageProvider } from './context/LanguageContext.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,7 +14,9 @@ createRoot(document.getElementById('root')).render(
       <ThemeProvider>
         <LanguageProvider>
           <CartProvider>
-            <App />
+            <AuthProvider>
+              <App />
+            </AuthProvider>
           </CartProvider>
         </LanguageProvider>
       </ThemeProvider>

@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Profile from './components/Profile'
 import Cart from './components/Cart'
+import Protected from './components/Protected'
+import Dashboard from './components/Dashboard'
 
 function App() {
 
@@ -14,6 +16,9 @@ function App() {
         <Home />
         <Profile />
         <Cart />
+        <Protected>
+          <Dashboard />
+        </Protected>
       </div>
     </>
   )
